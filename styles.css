@@ -377,38 +377,47 @@ em{font-style:normal;color:var(--red)}
   .brand span:last-child{font-size:15px}
   .section{padding-top:100px}
 
-  /* Mobile hero: keep the supplied 16:9 cover visually intact while giving the content a
-     stable, compact vertical rhythm. This prevents the CTA/description/scroll cue from
-     colliding on short portrait screens. */
+  /* Mobile hero: stack every element vertically so the cover never behaves like a
+     desktop two-column layout on narrow screens. */
   .site-bg--cover{
     background-size:auto 100svh;
     background-position:center top;
   }
   .hero{
     min-height:100svh;
-    height:100svh;
+    height:auto;
     overflow:hidden;
   }
   .hero-inner{
+    display:block;
     min-height:100svh;
-    height:100svh;
-    padding-bottom:70px;
+    height:auto;
+    padding-bottom:72px;
   }
   .hero-copy{
     width:100%;
     max-width:100%;
     padding-top:112px;
   }
-  .hero h1{font-size:72px;line-height:.88}
-  .hero .eyebrow{font-size:10px;letter-spacing:.095em;white-space:nowrap}
-  .hero .red-rule{margin:11px 0 16px}
-  .hero-quote{font-size:18px;line-height:1.3;margin-top:28px;gap:10px}
-  .quote-mark{font-size:50px}
-  .signature{margin-left:35px;font-size:13px}
-  .hero-actions{display:grid;grid-template-columns:1fr;gap:9px;margin-top:40px}
+  .hero h1{font-size:clamp(64px,20vw,78px);line-height:.88}
+  .hero .eyebrow{font-size:9px;letter-spacing:.075em;white-space:normal;line-height:1.35}
+  .hero .red-rule{margin:11px 0 15px}
+  .hero-quote{font-size:18px;line-height:1.3;margin-top:27px;gap:9px}
+  .quote-mark{font-size:48px}
+  .signature{margin-left:34px;font-size:13px}
+  .hero-actions{display:grid;grid-template-columns:1fr;gap:9px;margin-top:28px}
   .btn{width:100%;min-height:51px;font-size:13px;padding:0 16px}
-  .hero-description{font-size:12.5px;line-height:1.45;margin-top:19px;color:#b5b0ad}
-  .scroll-cue{bottom:10px;gap:7px;font-size:10px}
+  .hero-description{
+    position:static;
+    width:100%;
+    max-width:330px;
+    margin:24px 0 0;
+    font-size:13px;
+    line-height:1.5;
+    color:#b5b0ad;
+  }
+  .scroll-cue{position:static;transform:none;margin:30px auto 0;gap:7px;font-size:10px}
+  .scroll-cue i{height:18px}
   .scroll-cue i{height:18px}
   .desktop-only{display:none}
   .results{padding-top:105px}
